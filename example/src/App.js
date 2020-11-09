@@ -9,8 +9,17 @@ import './App.css';
 //The application will render the canvas element, and will allow drawing.
 function App() {
 
+  const draw = ctx => {
+    //First drawing
+    ctx.fillStyle = '#000000'
+    ctx.beginPath()
+    ctx.arc(50,100,20,0,2*Math.PI)
+    ctx.fill()
+    //ctx.fillRect(0,0, context.canvas.width, context.canvas.height)
+ }
+
   return (
-    <Canvas />
+    <Canvas draw={draw} />
   );
 }
 
@@ -22,17 +31,10 @@ function App() {
 
 const Canvas = props => {
 
+  const { draw, ...rest } = props
   const canvasRef = useRef(null)
 
-  const draw = ctx => {
-    //First drawing
-    ctx.fillStyle = '#000000'
-    ctx.beginPath()
-    ctx.arc(50,100,20,0,2*Math.PI)
-    ctx.fill()
-    //ctx.fillRect(0,0, context.canvas.width, context.canvas.height)
- }
-
+  
   //useEffect handles waiting for the component to 'did mount' properly before get the real canvas.
   //Right after the canvas element is available in the dom, we want to take its context and draw
   useEffect (() => { 
@@ -45,7 +47,7 @@ const Canvas = props => {
     draw(context)
     },[draw])
 
-    return <canvas ref = {canvasRef} {...props}/>
+    return <canvas ref = {canvasRef} {...rest}/>
     }
 
 //export default Canvas
