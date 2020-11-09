@@ -22,25 +22,31 @@ function App() {
 
 const Canvas = props => {
 
-const canvasRef = useRef(null)
+  const canvasRef = useRef(null)
 
-//useEffect handles waiting for the component to 'did mount' properly before get the real canvas.
-//Right after the canvas element is available in the dom, we want to take its context and draw
-useEffect (() => { 
+  const draw = ctx => {
+    //First drawing
+    ctx.fillStyle = '#000000'
+    ctx.beginPath()
+    ctx.arc(50,100,20,0,2*Math.PI)
+    ctx.fill()
+    //ctx.fillRect(0,0, context.canvas.width, context.canvas.height)
+ }
 
-//access the canvas element through the canvasRef. Get a DOM element by giving it a ref prop.
-const canvas = canvasRef.current
-//Get the DOM canvas element to get its context object
-const context = canvas.getContext('2d')
+  //useEffect handles waiting for the component to 'did mount' properly before get the real canvas.
+  //Right after the canvas element is available in the dom, we want to take its context and draw
+  useEffect (() => { 
 
-//First drawing
-context.fillStyle = '#000000'
-context.fillRect(0,0, context.canvas.width, context.canvas.height)
+    //access the canvas element through the canvasRef. Get a DOM element by giving it a ref prop.
+    const canvas = canvasRef.current
+    //Get the DOM canvas element to get its context object
+    const context = canvas.getContext('2d')
 
-},[])
+    draw(context)
+    },[draw])
 
-return <canvas ref = {canvasRef} {...props}/>
-}
+    return <canvas ref = {canvasRef} {...props}/>
+    }
 
 //export default Canvas
 
