@@ -21,7 +21,7 @@ const Canvas = props => {
     
   
   
-    const startPaint = useCallback ((event: MouseEvent) => {
+    const startPaint = useCallback ((event) => {
       const coordinates = getCoordinates(event);
       if (coordinates) {
         setIsPainting(true);
@@ -29,14 +29,14 @@ const Canvas = props => {
       }
     }, []);
   
-    const getCoordinates = (event: MouseEvent) => {
+    const getCoordinates = (event) => {
       if (!canvasRef.current) {
         return 
       };
       return {x: event.clientX - canvasRef.current.offsetLeft, y:event.pageY - canvasRef.current.offsetTop};
     }
   
-    const paint = useCallback ((event: MouseEvent) => {
+    const paint = useCallback ((event) => {
       if (isPainting) {
         const newMousePosition = getCoordinates(event);
         if (mousePosition && newMousePosition) {
@@ -54,8 +54,8 @@ const Canvas = props => {
       
       if (context) {
         context.strokeStyle = paintColor;
-        console.log("paint color:", paintColor)
-        console.log("stroke style:", context.strokeStyle)
+        //console.log("paint color:", paintColor)
+        //console.log("stroke style:", context.strokeStyle)
         context.lineJoin = 'round';
         context.lineWidth = reticleSize;
   
@@ -128,8 +128,9 @@ const Canvas = props => {
   
   
     const handleSaveDrawing = (evt) => {
-      const context = canvasRef.current.getContext("2d");
-      const savedImage = context.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      const canvasToSave = document.getElementById("mycanvas")
+      //Convert image to 'octet-stream' (Just a download)
+      const savedImage = canvasToSave.toDataURL("image/png").replace("image/png", "image/octet-stream");
       window.location.href=savedImage;
     };
   
@@ -143,11 +144,15 @@ const Canvas = props => {
         <React.Fragment> 
         <div className="spray">
           <canvas 
-            id="canvas"
+            id="mycanvas"
             className="spray"
             ref={canvasRef} 
             width={props.size.width}
             height={props.size.height}
+            // onmousedown={startPaint}
+            // onmouseup={exitPaint}
+            // onmouseleave={exitPaint}
+            // onmousemove={paint}
             style={{
               border: '2px solid #000',
               marginTop: 10,

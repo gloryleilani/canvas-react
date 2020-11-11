@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import './App.css';
-import brickwall from "./components/images/brickwall.jpg"
+//import brickwall from "./components/images/brickwall.jpg"
 import Canvas from "./components/canvas";
 //import spraybottle from "./images/spraybottle.png"
 
