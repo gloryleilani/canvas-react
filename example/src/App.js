@@ -2,11 +2,14 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import './App.css';
 import brickwall from "./images/brickwall.jpg"
+//import spraybottle from "./images/spraybottle.png"
 
 function App() {
+  
+  const canvasSize = {width: 700, height: 500};
   return (
     <div className="App">
-      <Canvas />
+      <Canvas size={canvasSize}/>
     </div>
   );
 }
@@ -88,7 +91,7 @@ const Canvas = props => {
     const context = canvasRef.current.getContext("2d");
     
     backgroundImg.onload = () => {
-      context.drawImage(backgroundImg, 0, 0, 700, 500)
+      context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
     }; 
   },[]);  
 
@@ -155,14 +158,25 @@ const Canvas = props => {
     setReticleSize(evt.target.value);
   };
 
+  const handleSaveDrawing = (evt) => {
+    const context = canvasRef.current.getContext("2d");
+    context.save();
+  };
+
+  const handleClearDrawing = (evt) => {
+    const context = canvasRef.current.getContext("2d");
+    context.clearRect(0, 0, props.size.width, props.size.height);
+  };
+
     return ( 
       <React.Fragment> 
-      <div>
+      <div className="spray">
         <canvas 
           id="canvas"
+          className="spray"
           ref={canvasRef} 
-          width={700}
-          height={500}
+          width={props.size.width}
+          height={props.size.height}
           style={{
             border: '2px solid #000',
             marginTop: 10,
@@ -171,17 +185,21 @@ const Canvas = props => {
 
           {...rest}/>
       </div>
-      <div>
-        Spray paint color: <button onClick={handleBlueClick} type="submit" value="blue">Blue</button>
-        <button onClick={handleRedClick} type="submit" value="red">Red</button>
-        <button onClick={handleGreenClick} type="submit" value="green">Green</button>
-        <button onClick={handleYellowClick} type="submit" value="yellow">Yellow</button>
+      <div className="spray">
+        Spray paint color: <button onClick={handleBlueClick} type="submit" value="blue" className="blueButton">Blue</button>
+        <button onClick={handleRedClick} type="submit" value="red" className="redButton">Red</button>
+        <button onClick={handleGreenClick} type="submit" value="green" className="greenButton">Green</button>
+        <button onClick={handleYellowClick} type="submit" value="yellow" className="yellowButton">Yellow</button>
       </div>
       <div>
         Reticle size: <button onClick={handleSpraySmallClick} type="submit" value="5">Small</button>
         <button onClick={handleSprayMediumClick} type="submit" value="15">Medium</button>
         <button onClick={handleSprayLargeClick} type="submit" value="25">Large</button>
 
+      </div>
+      <div>
+        <button onClick={handleSaveDrawing} type="submit" value="true">Save painting</button>
+        <button onClick={handleClearDrawing} type="submit" value="true">Start over</button>
       </div>
       </React.Fragment>
     )
