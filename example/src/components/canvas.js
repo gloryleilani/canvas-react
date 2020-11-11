@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 //import './App.css';
 import brickwall from "./images/brickwall.jpg"
+import spraybottle from "./images/sprayblackbottle.png"
 
 const Canvas = props => {
 
@@ -161,25 +162,51 @@ const Canvas = props => {
   
             {...rest}/>
         </div>
-        <div className="spray">
-          <p className="spray"> Spray paint color: <button onClick={handleColorSelection} type="submit" value="blue" className="blueButton">Blue</button>
-          <button onClick={handleColorSelection} type="submit" value="red" className="redButton">Red</button>
-          <button onClick={handleColorSelection} type="submit" value="green" className="greenButton">Green</button>
-          <button onClick={handleColorSelection} type="submit" value="yellow" className="yellowButton">Yellow</button>
-        </p>
-        </div>
-        <div>
-          Reticle size: <button onClick={handleSprayWidth} type="submit" value="10" id="smallReticle" className="reticle" ></button>
-          <button onClick={handleSprayWidth} type="submit" value="20" id="mediumReticle" className="reticle" ></button>
-          <button onClick={handleSprayWidth} type="submit" value="35" id="largeReticle" className="reticle" ></button>
-  
-        </div>
-        <div>
-          <button onClick={handleSaveDrawing} type="submit" value="true">Save painting</button>
-          <button onClick={handleClearDrawing} type="submit" value="true">Start over</button>
+        <div id="paint-options-content">
+            <div id="paint-color-options">
+                <p className="spray"> Paint color: <button onClick={handleColorSelection} type="submit" value="blue" id="blue-button" className="paint-sample"></button>
+                <button onClick={handleColorSelection} type="submit" value="red" id="red-button" className = "paint-sample"></button>
+                <button onClick={handleColorSelection} type="submit" value="green" id="green-button" className="paint-sample"></button>
+                <button onClick={handleColorSelection} type="submit" value="yellow" id="yellow-button" className="paint-sample"></button>
+                </p>
+            </div>
+            <div id="save-clear-options">
+                <button onClick={handleSaveDrawing} type="submit" value="true" className="sq-button"><i class="far fa-save"></i></button>
+                <button onClick={handleClearDrawing} type="submit" value="true" className="sq-button"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div id="spray-width-options">
+                Brush size: <button onClick={handleSprayWidth} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
+                <button onClick={handleSprayWidth} type="submit" value="20" id="medium-spray" className="spraybottle" ></button>
+                <button onClick={handleSprayWidth} type="submit" value="35" id="large-spray" className="spraybottle" ></button>                    
+            </div>
+            
         </div>
         </React.Fragment>
       )
     }
 
+// const SprayOptions = () => {
+//     return (
+//         <React.Fragment>
+//         <div className="spray">
+//         <p className="spray"> Spray paint color: <button onClick={handleColorSelection} type="submit" value="blue" id="blue-button" className="paint-sample"></button>
+//         <button onClick={handleColorSelection} type="submit" value="red" id="red-button" className = "paint-sample"></button>
+//         <button onClick={handleColorSelection} type="submit" value="green" id="green-button" className="paint-sample"></button>
+//         <button onClick={handleColorSelection} type="submit" value="yellow" id="yellow-button" className="paint-sample"></button>
+//       </p>
+//       </div>
+//       <div>
+//         Spray width: <button onClick={handleSprayWidth} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
+//         <button onClick={handleSprayWidth} type="submit" value="20" id="medium-spray" className="spraybottle" ></button>
+//         <button onClick={handleSprayWidth} type="submit" value="35" id="large-spray" className="spraybottle" ></button>
+        
+
+//       </div>
+//       <div>
+//         <button onClick={handleSaveDrawing} type="submit" value="true">Save painting</button>
+//         <button onClick={handleClearDrawing} type="submit" value="true">Start over</button>
+//       </div>
+//     </React.Fragment>
+//     )
+// }
     export default Canvas
