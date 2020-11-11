@@ -192,9 +192,9 @@ const Canvas = props => {
         <button onClick={handleYellowClick} type="submit" value="yellow" className="yellowButton">Yellow</button>
       </div>
       <div>
-        Reticle size: <button onClick={handleSpraySmallClick} type="submit" value="5">Small</button>
-        <button onClick={handleSprayMediumClick} type="submit" value="15">Medium</button>
-        <button onClick={handleSprayLargeClick} type="submit" value="25">Large</button>
+        Reticle size: <button onClick={handleSpraySmallClick} type="submit" value="10" id="smallReticle" className="reticle" ></button>
+        <button onClick={handleSprayMediumClick} type="submit" value="20" id="mediumReticle" className="reticle" ></button>
+        <button onClick={handleSprayLargeClick} type="submit" value="35" id="largeReticle" className="reticle" ></button>
 
       </div>
       <div>
