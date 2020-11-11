@@ -1,38 +1,13 @@
-.App {
-  text-align: center;
-}
+.spray {cursor: url("./components/images/spraybottle.png"),auto;}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+    .greenButton {background-color: #4CAF50;} /* Green */
+    .blueButton {background-color: #0000ff;} /* Blue */
+    .redButton {background-color: #f44336;} /* Red */
+    .yellowButton {background-color: #FFFF00;} /* Yellow */
+    .blackButton {background-color: #000000;} /* Black */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    .reticle {border-radius: 50%;}
+    
+    #largeReticle {height: 40px; width: 40px;}
+    #mediumReticle {height: 30px; width: 30px;}
+    #smallReticle {height: 20px; width: 20px;}
