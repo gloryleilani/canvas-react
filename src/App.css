@@ -1,4 +1,7 @@
-canvas {
+import .App
+
+
+#mycanvas {
   cursor: url("./components/images/sprayblackbottle.png"), auto;
 }
 
@@ -6,31 +9,68 @@ canvas {
   text-align: center;
 }
 
-
+#header-div {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-bottom: 0;
+  height: 30px;
+}
 /* .spray {cursor: url("./components/images/spraybottle.png"),auto;} */
 
-/* #paint-options-content {
-  width: 500px;
+#paint-options-content {
+  width: 700px; 
   height: 500px;
-} */
+  margin: auto;
+}
 
-#paint-color-options, #spray-width-options, #save-clear-options{
-   display: inline-block;
-   width: 20%;
-   height: 100%;
+#paint-color-options {
+  display: inline-block;
+  width: 33%;
+  margin-left: 0;
+  margin-top: 0;
+  height: 100px;
+  text-align: left;
+  vertical-align:top; 
+}
+
+#save-clear-options{
+  display: inline-block;
+  width: 43%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  height: 100px;
+  vertical-align:top;
+}
+
+#spray-width-options {
+  display: inline-block;
+  width: 23%;
+  margin-right: 0;
+  margin-top: 0;
+  height: 100px;
+  text-align: right;
+  vertical-align:top;
+  
 }
 
 
-.paint-sample {border-radius: 50%;
-  height: 40px; 
-  width: 40px;}
 
 #green-button {background-color: #4CAF50;} /* Green */
 #blue-button {background-color: #0000ff;} /* Blue */
 #red-button {background-color: #f44336;} /* Red */
 #yellow-button {background-color: #FFFF00;} /* Yellow */
-#black-button {background-color: #000000;} /* Black */
+#custom-color-button {
+  background-color: #000000;
+  background-image: url("./components/images/colorwheel.png"); /* Mix */
+}
 
+.paint-sample {
+  border-radius: 50%;
+  height: 40px; 
+  width: 40px;
+  vertical-align: center;
+  margin-bottom: 5px;
+  }
 
 #large-spray {height: 70px; width: 40px;}
 #medium-spray {height: 55px; width: 30px;}
@@ -39,6 +79,7 @@ canvas {
             background-image: url("./components/images/sprayblackbottle.png");
             background-size: cover;
             border: none;
+            margin-top: 5px;
             }
 
 .sq-button {height: 40px; 
@@ -47,6 +88,10 @@ canvas {
             border: none; /* Remove borders */
             color: white; /* White text */
             padding: 12px 16px; /* Some padding */
-            font-size: 16px; /* Set a font size */
+            font-size: 25px; /* Set a font size */
             cursor: pointer; /* Mouse pointer on hover */
+            padding: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            
 }

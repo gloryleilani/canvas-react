@@ -17,10 +17,9 @@ const Canvas = props => {
     const [paintColor, setPaintColor] = useState('blue')
     const [reticleSize, setReticleSize] = useState('10')
   
-    const backgroundImg = new Image()
-    backgroundImg.src = brickwall;
+    const backgroundImg = new Image() //Create new img element
+    backgroundImg.src = brickwall; //Set source path
     
-  
   
     const startPaint = useCallback ((event) => {
       const coordinates = getCoordinates(event);
@@ -57,8 +56,13 @@ const Canvas = props => {
         context.strokeStyle = paintColor;
         //console.log("paint color:", paintColor)
         //console.log("stroke style:", context.strokeStyle)
+        context.lineCap = 'round';
         context.lineJoin = 'round';
         context.lineWidth = reticleSize;
+        context.shadowOffsetX = 5;
+        context.shadowOffsetY = 5;
+        context.shadowBlur = 15;
+        context.shadowColor = paintColor;
   
         context.beginPath();
         context.moveTo(originalMousePosition.x, originalMousePosition.y);
@@ -71,7 +75,7 @@ const Canvas = props => {
       setIsPainting(false);
     }, []);
   
-    //Load canvas and background
+    //Load canvas 2D context/surface on the canvas element/node and background img
     useEffect(() => {
       if (!canvasRef.current) {
         return
@@ -84,6 +88,7 @@ const Canvas = props => {
     },[]);  
   
     //Start drawing when mouse is pressed downward
+    //When event (mousedown) is on target (Canvas node), call function
     useEffect(() => {
       if (!canvasRef.current) {
         return
@@ -173,18 +178,22 @@ const Canvas = props => {
         </div>
         <div id="paint-options-content">
             <div id="paint-color-options">
-                <p className="spray"> Paint color: <button onClick={handleColorSelection} type="submit" value="blue" id="blue-button" className="paint-sample"></button>
+                <p className="spray"> <button onClick={handleColorSelection} type="submit" value="blue" id="blue-button" className="paint-sample"></button>
                 <button onClick={handleColorSelection} type="submit" value="red" id="red-button" className = "paint-sample"></button>
                 <button onClick={handleColorSelection} type="submit" value="green" id="green-button" className="paint-sample"></button>
                 <button onClick={handleColorSelection} type="submit" value="yellow" id="yellow-button" className="paint-sample"></button>
+                <input name="Color Picker" type="color" id="custom-color-button" className="paint-sample"/>
+                
                 </p>
             </div>
             <div id="save-clear-options">
                 <button onClick={handleSaveDrawing} type="submit" value="true" className="sq-button"><i class="far fa-save"></i></button>
                 <button onClick={handleClearDrawing} type="submit" value="true" className="sq-button"><i class="fas fa-trash-alt"></i></button>
+            
             </div>
+            
             <div id="spray-width-options">
-                Spray nozzle tip size: <button onClick={handleSprayWidth} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
+                <button onClick={handleSprayWidth} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
                 <button onClick={handleSprayWidth} type="submit" value="20" id="medium-spray" className="spraybottle" ></button>
                 <button onClick={handleSprayWidth} type="submit" value="35" id="large-spray" className="spraybottle" ></button>                    
             </div>

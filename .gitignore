@@ -1,10 +1,13 @@
 #dependencies
-/node_modules
+node_modules
 
 #production deployment
-/build
+build
 
 #Testing
 .reportWebVitals.js
 .setupTests.js
 .App.test.js
+
+#Misc
+.DS_Store

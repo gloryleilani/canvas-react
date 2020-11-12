@@ -1,5 +1,5 @@
 ## Project Intro
-This graffiti wall was a project for a mini-hackathon held by Mintbean. I was very interested to learn how to draw graphics and build a foundation for future game development. I also wanted build an app that allows for artwork creation.   
+This graffiti wall was a project for a mini-hackathon held by Mintbean. I was interested to learn how to draw graphics, build an app that allows for artwork creation, and lay a foundation for possible future game development projects.
 
 ## About the Developer
 Lani graduated from Stanford University with a B. S. in Industrial Engineering and a M.A. in Sociology with a focus on "Organizations, Business and the Economy." She worked in real estate private equity investing in New York for several years and grew determined to help modernize the industry. She joined a startup in San Francisco building an online investment marketplace and became a product manager. She later joined a B2B SaaS company selling a CRM, an end-user portal, and investment management products. In her Product Management roles, Lani enjoyed deciding which products to build and why, but she grew increasingly interested in how to build the products, which led her to software engineering.
@@ -43,7 +43,6 @@ Possible future features:
 * Ability to select from additional paint colors.
 * Ability to fill shapes with colors or patterns.
 * Ability to erase.
-* Add blur to paint strokes to make it look more like spray paint
 
 The goal would be to make this a more fully-featured drawing app so that a user (e.g. a young person) could 
 do things they wish. The "future features" list above was inspired by a 9 year-old's feedback while she was 
