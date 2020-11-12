@@ -1,4 +1,4 @@
-# <img src="https://github.com/gloryleilani/graffitiwall/blob/master/static/graffitiwall.png" alt="Graffiti Wall">
+## Project Intro
 This graffiti wall was a project for a mini-hackathon held by Mintbean. I was very interested to learn how to draw graphics and build a foundation for future game development. I also wanted build an app that allows for artwork creation.   
 
 ## About the Developer
@@ -6,7 +6,7 @@ Lani graduated from Stanford University with a B. S. in Industrial Engineering a
 
 
 ## Deployment
- http://tbd/
+https://gloryleilani.github.io/graffiti-wall/
 
 ## Contents
 * [Tech Stack](#tech-stack)
@@ -43,6 +43,7 @@ Possible future features:
 * Ability to select from additional paint colors.
 * Ability to fill shapes with colors or patterns.
 * Ability to erase.
+* Add blur to paint strokes to make it look more like spray paint
 
 The goal would be to make this a more fully-featured drawing app so that a user (e.g. a young person) could 
 do things they wish. The "future features" list above was inspired by a 9 year-old's feedback while she was 
@@ -126,13 +127,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 Run npm install gh-pages --save-dev 
+
 Add to package.json file: 
+
 Within top section:
     "homepage": "https://gloryleilani.github.io/graffiti-wall/"
+
 Within the scripts section: 
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+
 Run npm build
+
 Run npm run deploy
 
 ##### `npm run build` fails to minify
