@@ -1,1 +1,10 @@
+#dependencies
 node_modules
+
+#production deployment
+build
+
+#Testing
+.reportWebVitals.js
+.setupTests.js
+.App.test.js
