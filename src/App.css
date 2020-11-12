@@ -1,0 +1,52 @@
+canvas {
+  cursor: url("./components/images/sprayblackbottle.png"), auto;
+}
+
+.App {
+  text-align: center;
+}
+
+
+/* .spray {cursor: url("./components/images/spraybottle.png"),auto;} */
+
+/* #paint-options-content {
+  width: 500px;
+  height: 500px;
+} */
+
+#paint-color-options, #spray-width-options, #save-clear-options{
+   display: inline-block;
+   width: 20%;
+   height: 100%;
+}
+
+
+.paint-sample {border-radius: 50%;
+  height: 40px; 
+  width: 40px;}
+
+#green-button {background-color: #4CAF50;} /* Green */
+#blue-button {background-color: #0000ff;} /* Blue */
+#red-button {background-color: #f44336;} /* Red */
+#yellow-button {background-color: #FFFF00;} /* Yellow */
+#black-button {background-color: #000000;} /* Black */
+
+
+#large-spray {height: 70px; width: 40px;}
+#medium-spray {height: 55px; width: 30px;}
+#small-spray {height: 40px; width: 20px;}
+.spraybottle {
+            background-image: url("./components/images/sprayblackbottle.png");
+            background-size: cover;
+            border: none;
+            }
+
+.sq-button {height: 40px; 
+            width: 40px;
+            background-color: DodgerBlue; /* Blue background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+}
