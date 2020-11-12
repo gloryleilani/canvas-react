@@ -1,11 +1,12 @@
+canvas {
+  cursor: url("./components/images/sprayblackbottle.png"), auto;
+}
 
 .App {
   text-align: center;
 }
 
-canvas {
-  cursor: url("./components/images/sprayblackbottle.png"), auto;
-}
+
 /* .spray {cursor: url("./components/images/spraybottle.png"),auto;} */
 
 /* #paint-options-content {
@@ -40,4 +41,12 @@ canvas {
             border: none;
             }
 
-.sq-button {height: 40px; width: 40px;}
+.sq-button {height: 40px; 
+            width: 40px;
+            background-color: DodgerBlue; /* Blue background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+}

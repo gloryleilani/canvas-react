@@ -128,14 +128,23 @@ const Canvas = props => {
   
   
   
-    const handleSaveDrawing = (evt) => {
-      const canvasToSave = document.getElementById("mycanvas")
+    const handleSaveDrawing = () => {
+      //const canvasToSave = document.getElementById("mycanvas")
       //Convert image to 'octet-stream' (Just a download)
-      const savedImage = canvasToSave.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      const savedImage = canvasRef.current.toDataURL("image/png").replace("image/png", "image/octet-stream");
       window.location.href=savedImage;
+      //const savedImage = canvasRef.current.toDataURL();
+    //   const savedImageName = "GraffitiWall";
+    //   document.createElement("a").href = savedImage;
+    //   document.createElement("a").target = "_blank";
+    //   document.createElement("a").download = savedImageName;
+    //   const evt = document.createEvent("MouseEvents");
+    //   evt.initMouseEvent("click", true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+    //   document.createElement("a").dispatchEvent(evt);
+      
     };
   
-    const handleClearDrawing = (evt) => {
+    const handleClearDrawing = () => {
       const context = canvasRef.current.getContext("2d");
       context.clearRect(0, 0, props.size.width, props.size.height);
       context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
@@ -175,7 +184,7 @@ const Canvas = props => {
                 <button onClick={handleClearDrawing} type="submit" value="true" className="sq-button"><i class="fas fa-trash-alt"></i></button>
             </div>
             <div id="spray-width-options">
-                Brush size: <button onClick={handleSprayWidth} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
+                Spray nozzle tip size: <button onClick={handleSprayWidth} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
                 <button onClick={handleSprayWidth} type="submit" value="20" id="medium-spray" className="spraybottle" ></button>
                 <button onClick={handleSprayWidth} type="submit" value="35" id="large-spray" className="spraybottle" ></button>                    
             </div>
