@@ -1,11 +1,21 @@
 import .App
 
+
 #mycanvas {
   cursor: url("./components/images/sprayblackbottle.png"), auto;
 }
 
 .App {
   text-align: center;
+  
+  
+}
+
+body {
+  background-image: url("./components/images/backgrounds/brickwall1.jpg"), repeat;
+  /* margin: 0;
+  padding: 0; */
+  /* opacity: 0.3; */
 }
 
 #header-div {
@@ -61,7 +71,7 @@ import .App
 #yellow-button {background-color: #FFFF00;} /* Yellow */
 #custom-color-button {
   background-color: #000000;
-  background-image: url("./components/images/colorwheel.png"); /* Mix */
+  /* background-image: url("./components/images/colorwheel.png"); Mix */
   }
 
 .paint-sample {
