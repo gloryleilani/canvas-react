@@ -1,6 +1,5 @@
 import .App
 
-
 #mycanvas {
   cursor: url("./components/images/sprayblackbottle.png"), auto;
 }
@@ -14,12 +13,14 @@ import .App
   margin-bottom: 0;
   height: 30px;
 }
-/* .spray {cursor: url("./components/images/spraybottle.png"),auto;} */
 
+
+/*Div containers for paint options panel */
 #paint-options-content {
   width: 700px; 
   height: 500px;
   margin: auto;
+  margin-top: 0;
 }
 
 #paint-color-options {
@@ -49,12 +50,11 @@ import .App
   margin-top: 0;
   height: 100px;
   text-align: right;
-  vertical-align:top;
-  
+  vertical-align:top; 
 }
 
 
-
+/*Relating to paint color options within div */
 #green-button {background-color: #4CAF50;} /* Green */
 #blue-button {background-color: #0000ff;} /* Blue */
 #red-button {background-color: #f44336;} /* Red */
@@ -62,7 +62,7 @@ import .App
 #custom-color-button {
   background-color: #000000;
   background-image: url("./components/images/colorwheel.png"); /* Mix */
-}
+  }
 
 .paint-sample {
   border-radius: 50%;
@@ -72,26 +72,42 @@ import .App
   margin-bottom: 5px;
   }
 
+
+/*Relating to paint nozzle tip size options within div */  
 #large-spray {height: 70px; width: 40px;}
 #medium-spray {height: 55px; width: 30px;}
 #small-spray {height: 40px; width: 20px;}
-.spraybottle {
-            background-image: url("./components/images/sprayblackbottle.png");
-            background-size: cover;
-            border: none;
-            margin-top: 5px;
-            }
 
-.sq-button {height: 40px; 
-            width: 40px;
-            background-color: DodgerBlue; /* Blue background */
-            border: none; /* Remove borders */
-            color: white; /* White text */
-            padding: 12px 16px; /* Some padding */
-            font-size: 25px; /* Set a font size */
-            cursor: pointer; /* Mouse pointer on hover */
-            padding: 5px;
-            margin-left: 5px;
-            margin-right: 5px;
+.spraybottle {
+  background-image: url("./components/images/sprayblackbottle.png");
+  background-size: cover;
+  border: none;
+  margin-top: 5px;
+  }
+
+
+/*Relating to save, clear, brick-wall options within div */
+.sq-button {
+  
+  height: 40px; 
+  width: 40px;
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 25px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
             
+}
+
+#brick-button {
+  background-image: url("./components/images/brick-wall-icon.png");
+  height: 40px; 
+  width: 40px;
+  cursor: pointer; /* Mouse pointer on hover */ 
+  vertical-align: middle;
 }

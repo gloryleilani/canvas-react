@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 //import './App.css';
-import brickwall from "./images/brickwall.jpg"
+import brickwall1 from "./images/brickwall.jpg"
 import spraybottle from "./images/sprayblackbottle.png"
 
 const Canvas = props => {
@@ -16,9 +16,10 @@ const Canvas = props => {
     const [mousePosition, setMousePosition] = useState(Coordinate);  
     const [paintColor, setPaintColor] = useState('blue')
     const [reticleSize, setReticleSize] = useState('10')
+    const [backgroundWall, setBackgroundWall] = useState('brickwall1')
   
-    const backgroundImg = new Image() //Create new img element
-    backgroundImg.src = brickwall; //Set source path
+    
+    
     
   
     const startPaint = useCallback ((event) => {
@@ -76,16 +77,22 @@ const Canvas = props => {
     }, []);
   
     //Load canvas 2D context/surface on the canvas element/node and background img
+    const backgroundImg = new Image() //Create new img element
+    console.log("background img: ", backgroundImg)
+    console.log("backgroundWall: ", backgroundWall)
     useEffect(() => {
       if (!canvasRef.current) {
         return
       };
       const context = canvasRef.current.getContext("2d");
       
+      backgroundImg.src = backgroundWall; //Set source path
+      console.log("background img: ", backgroundImg)
       backgroundImg.onload = () => {
+        
         context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
       }; 
-    },[]);  
+    },[backgroundWall]);  
   
     //Start drawing when mouse is pressed downward
     //When event (mousedown) is on target (Canvas node), call function
@@ -123,15 +130,6 @@ const Canvas = props => {
       }
     }, [exitPaint]);
   
-    const handleColorSelection = (evt) => {
-      setPaintColor(evt.target.value);
-    };
-  
-    const handleSprayWidth = (evt) => {
-      setReticleSize(evt.target.value);
-    };
-  
-  
   
     const handleSaveDrawing = () => {
       //const canvasToSave = document.getElementById("mycanvas")
@@ -155,6 +153,7 @@ const Canvas = props => {
       context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
     };
   
+
       return ( 
         <React.Fragment> 
         <div className="spray">
@@ -178,30 +177,33 @@ const Canvas = props => {
         </div>
         <div id="paint-options-content">
             <div id="paint-color-options">
-                <p className="spray"> <button onClick={handleColorSelection} type="submit" value="blue" id="blue-button" className="paint-sample"></button>
-                <button onClick={handleColorSelection} type="submit" value="red" id="red-button" className = "paint-sample"></button>
-                <button onClick={handleColorSelection} type="submit" value="green" id="green-button" className="paint-sample"></button>
-                <button onClick={handleColorSelection} type="submit" value="yellow" id="yellow-button" className="paint-sample"></button>
-                <input name="Color Picker" type="color" id="custom-color-button" className="paint-sample"/>
+                <p className="spray"> <button onClick={e=>setPaintColor(e.target.value)} type="submit" value="blue" id="blue-button" className="paint-sample"></button>
+                <button onClick={e=>setPaintColor(e.target.value)} type="submit" value="red" id="red-button" className = "paint-sample"></button>
+                <button onClick={e=>setPaintColor(e.target.value)} type="submit" value="green" id="green-button" className="paint-sample"></button>
+                <button onClick={e=>setPaintColor(e.target.value)} type="submit" value="yellow" id="yellow-button" className="paint-sample"></button>
+                <input name="Color Picker" type="color" value={paintColor} onChange={e=>setPaintColor(e.target.value)} id="custom-color-button" className="paint-sample"/>
                 
                 </p>
             </div>
             <div id="save-clear-options">
-                <button onClick={handleSaveDrawing} type="submit" value="true" className="sq-button"><i class="far fa-save"></i></button>
-                <button onClick={handleClearDrawing} type="submit" value="true" className="sq-button"><i class="fas fa-trash-alt"></i></button>
-            
+                <button onClick={handleSaveDrawing} type="submit" value="save-drawing" className="sq-button"><i class="far fa-save"></i></button>
+                <button onClick={handleClearDrawing} type="submit" value="clear-drawing" className="sq-button"><i class="fas fa-trash-alt"></i></button>
+                <button onClick={e=>setBackgroundWall(e.target.value)} type="submit" value={backgroundWall} id="brick-button" className="sq-button"></button>
             </div>
             
             <div id="spray-width-options">
-                <button onClick={handleSprayWidth} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
-                <button onClick={handleSprayWidth} type="submit" value="20" id="medium-spray" className="spraybottle" ></button>
-                <button onClick={handleSprayWidth} type="submit" value="35" id="large-spray" className="spraybottle" ></button>                    
+                <button onClick={e=>setReticleSize(e.target.value)} type="submit" value="10" id="small-spray" className="spraybottle" ></button>
+                <button onClick={e=>setReticleSize(e.target.value)} type="submit" value="20" id="medium-spray" className="spraybottle" ></button>
+                <button onClick={e=>setReticleSize(e.target.value)} type="submit" value="35" id="large-spray" className="spraybottle" ></button>                    
             </div>
             
         </div>
         </React.Fragment>
       )
     }
+
+
+
 
 // const SprayOptions = () => {
 //     return (
