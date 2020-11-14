@@ -7,13 +7,20 @@
 .App {
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
 }
 
-.App::before {
-  opacity: 0.3;
-  background-image: url("./components/images/backgrounds/brickwall1.jpg"), repeat;
+.App::after {
+  content: "";
+  background-image: url("./components/images/backgrounds/brickwall1.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-color: gray;
   margin: 0;
   padding: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.75;
 }
 
 #header-div {
