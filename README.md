@@ -16,7 +16,6 @@ https://gloryleilani.github.io/graffiti-wall/
 * [License](#license)
 
 ## <a name="tech-stack"></a>Technologies
-* Python
 * JavaScript
 * React
 * HTML
@@ -28,7 +27,7 @@ https://gloryleilani.github.io/graffiti-wall/
 Users are brought to a webpage built in React containing a blank brick wall to draw on.
 
 #### Painting options
-Users can select a paint color from a palette and select a brush size (spray paint can's nozzle tip size). 
+Users can select a paint color from a palette including a custom color picker and select a brush size (spray paint can's nozzle tip size). Users can also select from a number of brick wall background patterns.
 
 #### Save and discard options
 Users can choose to save and download their artwork locally or discard their artwork and start over.
@@ -39,8 +38,7 @@ Users can choose to save and download their artwork locally or discard their art
 Possible future features:
 * Ability to undo the last paint stroke.
 * Ability to use stencils.
-* Ability to change the background to a different brick wall image or a coloring page
-* Ability to select from additional paint colors.
+* Ability to change the background to a coloring page 
 * Ability to fill shapes with colors or patterns.
 * Ability to erase.
 
