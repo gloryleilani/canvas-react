@@ -20,7 +20,7 @@ const Canvas = props => {
     const [mousePosition, setMousePosition] = useState(Coordinate);  
     const [paintColor, setPaintColor] = useState('blue');
     const [reticleSize, setReticleSize] = useState('10');
-    const [showBackgroundOptions, setShowBackgroundOptions] = useState('false');
+    const [showBackgroundOptions, setShowBackgroundOptions] = useState(false);
     const [backgroundWall, setBackgroundWall] = useState(brickwall1);
     
     console.log("background wall:", backgroundWall)
@@ -57,8 +57,6 @@ const Canvas = props => {
       
       if (context) {
         context.strokeStyle = paintColor;
-        //console.log("paint color:", paintColor)
-        //console.log("stroke style:", context.strokeStyle)
         context.lineCap = 'round';
         context.lineJoin = 'round';
         context.lineWidth = reticleSize;
@@ -89,9 +87,9 @@ const Canvas = props => {
       };
       const context = canvasRef.current.getContext("2d");
       backgroundImg.src = backgroundWall; //Set source path
-      console.log("background img: ", backgroundImg)
+      console.log("background img: ", backgroundImg);
       backgroundImg.onload = () => {
-        context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
+        context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height);
       }; 
     },[backgroundWall]);  
   
@@ -150,9 +148,10 @@ const Canvas = props => {
     const handleClearDrawing = () => {
       const context = canvasRef.current.getContext("2d");
       context.clearRect(0, 0, props.size.width, props.size.height);
-      console.log("backgroundimg:", backgroundImg)
-      console.log("background wall:", backgroundWall)
-      context.drawImage(backgroundWall, 0, 0, props.size.width, props.size.height)
+      backgroundImg.src = backgroundWall;
+      backgroundImg.onload = () => {
+        context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height);
+      };
     };
 
     const choosePaintColor = (e) => {
@@ -169,7 +168,7 @@ const Canvas = props => {
 
     const updateBackground = (wall) => {
       setBackgroundWall(wall.target.id);
-      setShowBackgroundOptions("false");
+      setShowBackgroundOptions(false);
     }
 
       return ( 
@@ -202,7 +201,7 @@ const Canvas = props => {
               <div id="save-clear-options">
                   <SquareIconButton handleClick={handleSaveDrawing} value="save-drawing" icon={<i className="far fa-save"></i>} />
                   <SquareIconButton handleClick={handleClearDrawing} value="clear-drawing" icon={<i className="fas fa-trash-alt"></i>}/>
-                  <button onClick={toggleBackgroundOptions} type="submit" value="true" id="brick-button" className="sq-button"></button>
+                  <button onClick={toggleBackgroundOptions} type="submit" value="true" id="brick-button" className={`sq-button ${showBackgroundOptions? "selected-button": ""}`}></button>
               </div>
               
               <div id="spray-width-options">
@@ -212,7 +211,7 @@ const Canvas = props => {
               </div>
           </div>
           <div>
-            {showBackgroundOptions==='true' && <BackgroundOptions onClick={updateBackground} value={backgroundWall} /> }
+            {showBackgroundOptions && <BackgroundOptions onClick={updateBackground} value={backgroundWall} /> }
           </div>
         
         </React.Fragment>
