@@ -21,9 +21,9 @@ const Canvas = props => {
     const [paintColor, setPaintColor] = useState('blue');
     const [reticleSize, setReticleSize] = useState('10');
     const [showBackgroundOptions, setShowBackgroundOptions] = useState('false');
-    const [backgroundWall, setBackgroundWall] = useState('brickwall1');
+    const [backgroundWall, setBackgroundWall] = useState(brickwall1);
     
-  
+    console.log("background wall:", backgroundWall)
     const startPaint = useCallback ((event) => {
       const coordinates = getCoordinates(event);
       if (coordinates) {
@@ -93,7 +93,7 @@ const Canvas = props => {
       backgroundImg.onload = () => {
         context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
       }; 
-    },[]);  
+    },[backgroundWall]);  
   
     //Start drawing when mouse is pressed downward
     //When event (mousedown) is on target (Canvas node), call function
@@ -150,7 +150,9 @@ const Canvas = props => {
     const handleClearDrawing = () => {
       const context = canvasRef.current.getContext("2d");
       context.clearRect(0, 0, props.size.width, props.size.height);
-      context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
+      console.log("backgroundimg:", backgroundImg)
+      console.log("background wall:", backgroundWall)
+      context.drawImage(backgroundWall, 0, 0, props.size.width, props.size.height)
     };
 
     const choosePaintColor = (e) => {
@@ -165,7 +167,10 @@ const Canvas = props => {
       setShowBackgroundOptions(e.target.value);
     }
 
-    const updateBackground = (e) => 
+    const updateBackground = (wall) => {
+      setBackgroundWall(wall.target.id);
+      setShowBackgroundOptions("false");
+    }
 
       return ( 
         <React.Fragment> 
@@ -207,7 +212,7 @@ const Canvas = props => {
               </div>
           </div>
           <div>
-            {showBackgroundOptions==='true' && <BackgroundOptions /> }
+            {showBackgroundOptions==='true' && <BackgroundOptions onClick={updateBackground} value={backgroundWall} /> }
           </div>
         
         </React.Fragment>

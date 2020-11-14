@@ -14,12 +14,16 @@ import brickwall9 from "./images/backgrounds/brickwall9.jpg"
 
 const BackgroundButton = props => {
 
+    const handleClick = (e) => {
+        props.onClick(e.target.value);
+    };
+
     return (
         <React.Fragment>
             <img
-                onClick={props.updateBackground} 
+                onClick={props.onClick} 
                 type="submit" 
-                value={props.id} 
+                value={props.value} 
                 id={props.id}
                 className="background-options-button"
                 src={props.id}
@@ -40,12 +44,16 @@ const BackgroundOptions = (props) => {
                 <BackgroundButton 
                 key={`brickwall${i}`}
                 id={currentImg}
-                updateBackground={props.updateBackground}
+                onClick={props.onClick}
+                value={props.value}
                 />
             );
             i+=1;
-    }; 
-    return (
+        console.log("currentImg:", currentImg)
+        }; 
+    
+    
+        return (
         <div className="brick-backgrounds-panel">
             <p>To start over with a new brick background, select from below:</p>
             {backgroundComponents}
