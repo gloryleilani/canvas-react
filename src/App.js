@@ -6,7 +6,7 @@ import Canvas from "./components/canvas";
 
 function App() {
   
-  const canvasSize = {width: 700, height: 500};
+  const canvasSize = {width: 700, height: 490};
   return (
     <div className="App">
       <div id="header-div"><h1>Graffiti Wall</h1></div>

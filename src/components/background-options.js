@@ -16,30 +16,36 @@ import brickwall9 from "./images/backgrounds/brickwall9.jpg"
 const BackgroundButton = props => {
 
     return (
+        <React.Fragment>
         <img
             onClick={props.updateBackground} 
             type="submit" 
             value={props.imgSrc} 
             id={props.id}
             className="background-options-button"
-            src={props.imgSrc} 
+            src={props.id}
             alt={props.imgSrc} />
-            
+        <img src={props.imgSrc}/>
+        </React.Fragment>
         );
 } 
+const backgrounds = [brickwall1, brickwall2, brickwall3, brickwall4, brickwall5, brickwall6, brickwall7, brickwall8, brickwall9]
 
 const BackgroundOptions = () => {
 
     const backgroundComponents = []; 
     
-    for (let i=1; i<10; i++) {
-        backgroundComponents.push(
-            <BackgroundButton 
-                id={i}
-                key={i}
-                // img= />
-                imgSrc={`brickwall${i}`} />
-        );
+    let i = 1
+    // for (let i=1; i<10; i++) {
+        for (const currentImg of backgrounds) {
+            backgroundComponents.push(
+                <BackgroundButton 
+                key={`brickwall${i}`}
+                id={currentImg}
+                />
+            );
+            i+=1;
+        
         console.log("i",i)
     }; 
     console.log("backgroundComponents:", backgroundComponents)
@@ -47,7 +53,7 @@ const BackgroundOptions = () => {
         <div className="brick-backgrounds-panel">
             <p>To start over with a new brick background, select from below:</p>
             {backgroundComponents}
-            <img src = "brickwall9"/> 
+            
         </div>
     );
 }

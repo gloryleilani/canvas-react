@@ -174,7 +174,7 @@ const Canvas = props => {
 
       return ( 
         <React.Fragment> 
-          <div className="spray">
+          <div className="main-view">
             <canvas 
               id="mycanvas"
               className="spray"
