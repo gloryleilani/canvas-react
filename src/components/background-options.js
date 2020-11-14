@@ -1,4 +1,3 @@
-
 import { checkPropTypes } from 'prop-types';
 import React from 'react';
 
@@ -17,21 +16,20 @@ const BackgroundButton = props => {
 
     return (
         <React.Fragment>
-        <img
-            onClick={props.updateBackground} 
-            type="submit" 
-            value={props.imgSrc} 
-            id={props.id}
-            className="background-options-button"
-            src={props.id}
-            alt={props.imgSrc} />
-        <img src={props.imgSrc}/>
+            <img
+                onClick={props.updateBackground} 
+                type="submit" 
+                value={props.id} 
+                id={props.id}
+                className="background-options-button"
+                src={props.id}
+                alt={props.id} />
         </React.Fragment>
         );
 } 
 const backgrounds = [brickwall1, brickwall2, brickwall3, brickwall4, brickwall5, brickwall6, brickwall7, brickwall8, brickwall9]
 
-const BackgroundOptions = () => {
+const BackgroundOptions = (props) => {
 
     const backgroundComponents = []; 
     
@@ -42,18 +40,15 @@ const BackgroundOptions = () => {
                 <BackgroundButton 
                 key={`brickwall${i}`}
                 id={currentImg}
+                updateBackground={props.updateBackground}
                 />
             );
             i+=1;
-        
-        console.log("i",i)
     }; 
-    console.log("backgroundComponents:", backgroundComponents)
     return (
         <div className="brick-backgrounds-panel">
             <p>To start over with a new brick background, select from below:</p>
             {backgroundComponents}
-            
         </div>
     );
 }

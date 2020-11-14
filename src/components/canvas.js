@@ -80,18 +80,17 @@ const Canvas = props => {
   
     //Load canvas 2D context/surface on the canvas element/node and background img
     const backgroundImg = new Image() //Create new img element
-    console.log("background img: ", backgroundImg)
-    console.log("backgroundWall: ", backgroundWall)
+    //console.log("background img: ", backgroundImg)
+    //console.log("backgroundWall: ", backgroundWall)
+    
     useEffect(() => {
       if (!canvasRef.current) {
         return
       };
       const context = canvasRef.current.getContext("2d");
-      
       backgroundImg.src = backgroundWall; //Set source path
       console.log("background img: ", backgroundImg)
       backgroundImg.onload = () => {
-        
         context.drawImage(backgroundImg, 0, 0, props.size.width, props.size.height)
       }; 
     },[]);  
@@ -146,7 +145,6 @@ const Canvas = props => {
     //   const evt = document.createEvent("MouseEvents");
     //   evt.initMouseEvent("click", true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
     //   document.createElement("a").dispatchEvent(evt);
-      
     };
   
     const handleClearDrawing = () => {
@@ -157,20 +155,17 @@ const Canvas = props => {
 
     const choosePaintColor = (e) => {
       setPaintColor(e.target.value);
-      //console.log("set paint:", paintColor);
     };
     
     const chooseReticleSize = (e) => {
       setReticleSize(e.target.value);
     }
 
-    console.log("show background",showBackgroundOptions);
     const toggleBackgroundOptions = (e) => {
-      console.log("show background",showBackgroundOptions);
       setShowBackgroundOptions(e.target.value);
-      console.log("show background",showBackgroundOptions);
-
     }
+
+    const updateBackground = (e) => 
 
       return ( 
         <React.Fragment> 
@@ -218,9 +213,6 @@ const Canvas = props => {
         </React.Fragment>
       )
     }
-
-
-
 
 
     export default Canvas

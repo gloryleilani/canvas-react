@@ -9,10 +9,7 @@ const ReticleButton = props => {
             value={props.value}
             id={props.id} 
             className="spraybottle"></button>
-     
     );
 }
 
 export default ReticleButton
-               
-
