@@ -7,8 +7,7 @@ import .App
 
 .App {
   text-align: center;
-  
-  
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body {
@@ -19,7 +18,6 @@ body {
 }
 
 #header-div {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin-bottom: 0;
   height: 30px;
 }
@@ -28,7 +26,7 @@ body {
 /*Div containers for paint options panel */
 #paint-options-content {
   width: 700px; 
-  height: 500px;
+  height: 80px;
   margin: auto;
   margin-top: 0;
 }
@@ -98,7 +96,6 @@ body {
 
 /*Relating to save, clear, brick-wall options within div */
 .sq-button {
-  
   height: 40px; 
   width: 40px;
   background-color: DodgerBlue; /* Blue background */
@@ -121,3 +118,15 @@ body {
   cursor: pointer; /* Mouse pointer on hover */ 
   vertical-align: middle;
 }
+
+.brick-backgrounds-panel {
+  height: 150px; 
+}
+
+.background-options-button {
+  height: 70px; 
+  width: 70px;
+  border: 1px solid;
+  border-radius: 16px;
+}
+

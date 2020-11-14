@@ -5,6 +5,7 @@ import spraybottle from "./images/sprayblackbottle.png"
 import PaintColorButton from "./paint-color-button"
 import SquareIconButton from "./square-icon-button"
 import ReticleButton from "./reticle-button"
+import BackgroundOptions from "./background-options"
 
 const Canvas = props => {
 
@@ -19,7 +20,7 @@ const Canvas = props => {
     const [mousePosition, setMousePosition] = useState(Coordinate);  
     const [paintColor, setPaintColor] = useState('blue');
     const [reticleSize, setReticleSize] = useState('10');
-    const [chooseBackgroundWall, setChooseBackgroundWall] = useState('false');
+    const [showBackgroundOptions, setShowBackgroundOptions] = useState('false');
     const [backgroundWall, setBackgroundWall] = useState('brickwall1');
     
   
@@ -163,73 +164,63 @@ const Canvas = props => {
       setReticleSize(e.target.value);
     }
 
+    console.log("show background",showBackgroundOptions);
+    const toggleBackgroundOptions = (e) => {
+      console.log("show background",showBackgroundOptions);
+      setShowBackgroundOptions(e.target.value);
+      console.log("show background",showBackgroundOptions);
 
+    }
 
       return ( 
         <React.Fragment> 
-        <div className="spray">
-          <canvas 
-            id="mycanvas"
-            className="spray"
-            ref={canvasRef} 
-            width={props.size.width}
-            height={props.size.height}
-            // onmousedown={startPaint}
-            // onmouseup={exitPaint}
-            // onmouseleave={exitPaint}
-            // onmousemove={paint}
-            style={{
-              border: '2px solid #000',
-              marginTop: 10,
-              
-            }}
-  
-            {...rest}/>
-        </div>
-        <div id="paint-options-content">
-            <div id="paint-color-options">
-                <PaintColorButton choosePaintColor={choosePaintColor} value="blue" id="blue-button"/>
-                <PaintColorButton choosePaintColor={choosePaintColor} value="red" id="red-button"/>
-                <PaintColorButton choosePaintColor={choosePaintColor} value="green" id="green-button"/>
-                <PaintColorButton choosePaintColor={choosePaintColor} value="yellow" id="yellow-button"/>
-                <input name="Color Picker" type="color" value={paintColor} onChange={e=>setPaintColor(e.target.value)} id="custom-color-button" className="paint-sample"/>
-                
-                
-            </div>
-            <div id="save-clear-options">
-                <SquareIconButton handleClick={handleSaveDrawing} value="save-drawing" icon={<i className="far fa-save"></i>} />
-                <SquareIconButton handleClick={handleClearDrawing} value="clear-drawing" icon={<i className="fas fa-trash-alt"></i>}/>
-                <button onClick={e=> setChooseBackgroundWall("true")} type="submit" value="true" id="brick-button" className="sq-button"></button>
-            </div>
-            
-            <div id="spray-width-options">
-                <ReticleButton chooseReticle={chooseReticleSize} value="10" id="small-spray" />
-                <ReticleButton chooseReticle={chooseReticleSize} value="20" id="medium-spray" />
-                <ReticleButton chooseReticle={chooseReticleSize} value="35" id="large-spray" />                    
-            </div>
-            
-        </div>
-        <div>
-        {/* chooseBackgroundWall?  */}
-              
+          <div className="spray">
+            <canvas 
+              id="mycanvas"
+              className="spray"
+              ref={canvasRef} 
+              width={props.size.width}
+              height={props.size.height}
+              // onmousedown={startPaint}
+              // onmouseup={exitPaint}
+              // onmouseleave={exitPaint}
+              // onmousemove={paint}
+              style={{
+                border: '2px solid #000',
+                marginTop: 10,
+              }}
+              {...rest}/>
+          </div>
+          <div id="paint-options-content">
+              <div id="paint-color-options">
+                  <PaintColorButton choosePaintColor={choosePaintColor} value="blue" id="blue-button"/>
+                  <PaintColorButton choosePaintColor={choosePaintColor} value="red" id="red-button"/>
+                  <PaintColorButton choosePaintColor={choosePaintColor} value="green" id="green-button"/>
+                  <PaintColorButton choosePaintColor={choosePaintColor} value="yellow" id="yellow-button"/>
+                  <input name="Color Picker" type="color" value={paintColor} onChange={e=>setPaintColor(e.target.value)} id="custom-color-button" className="paint-sample"/>
               </div>
+              <div id="save-clear-options">
+                  <SquareIconButton handleClick={handleSaveDrawing} value="save-drawing" icon={<i className="far fa-save"></i>} />
+                  <SquareIconButton handleClick={handleClearDrawing} value="clear-drawing" icon={<i className="fas fa-trash-alt"></i>}/>
+                  <button onClick={toggleBackgroundOptions} type="submit" value="true" id="brick-button" className="sq-button"></button>
+              </div>
+              
+              <div id="spray-width-options">
+                  <ReticleButton chooseReticle={chooseReticleSize} value="10" id="small-spray" />
+                  <ReticleButton chooseReticle={chooseReticleSize} value="20" id="medium-spray" />
+                  <ReticleButton chooseReticle={chooseReticleSize} value="35" id="large-spray" />                    
+              </div>
+          </div>
+          <div>
+            {showBackgroundOptions==='true' && <BackgroundOptions /> }
+          </div>
         
         </React.Fragment>
       )
     }
 
 
-    var backgroundImgs = [
-      "./images/backgrounds/brickwall1.jpg",
-      "./images/backgrounds/brickwall2.jpg",
-      "./images/backgrounds/brickwall3.jpg",
-      "./images/backgrounds/brickwall4.jpg",
-      "./images/backgrounds/brickwall5.jpg",
-      "./images/backgrounds/brickwall6.jpg",
-      "./images/backgrounds/brickwall7.jpg",
-      "./images/backgrounds/brickwall8.jpg",
-      "./images/backgrounds/brickwall9.jpg",
-    ]
+
 
 
     export default Canvas
