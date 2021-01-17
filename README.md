@@ -20,6 +20,7 @@ https://gloryleilani.github.io/graffiti-wall/
 * React
 * HTML
 * CSS
+* HTML5 Canvas API for graphics display
 
 ## <a name="features"></a>Features
 

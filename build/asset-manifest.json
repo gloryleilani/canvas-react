@@ -1,24 +1,31 @@
 {
   "files": {
-    "main.css": "/graffiti-wall/static/css/main.d380b7a8.chunk.css",
-    "main.js": "/graffiti-wall/static/js/main.94a89a90.chunk.js",
-    "main.js.map": "/graffiti-wall/static/js/main.94a89a90.chunk.js.map",
-    "runtime-main.js": "/graffiti-wall/static/js/runtime-main.797904c1.js",
-    "runtime-main.js.map": "/graffiti-wall/static/js/runtime-main.797904c1.js.map",
-    "static/js/2.9c26095e.chunk.js": "/graffiti-wall/static/js/2.9c26095e.chunk.js",
-    "static/js/2.9c26095e.chunk.js.map": "/graffiti-wall/static/js/2.9c26095e.chunk.js.map",
-    "static/js/3.b9e5de7e.chunk.js": "/graffiti-wall/static/js/3.b9e5de7e.chunk.js",
-    "static/js/3.b9e5de7e.chunk.js.map": "/graffiti-wall/static/js/3.b9e5de7e.chunk.js.map",
+    "main.css": "/graffiti-wall/static/css/main.913ec0c5.chunk.css",
+    "main.js": "/graffiti-wall/static/js/main.142acfdb.chunk.js",
+    "main.js.map": "/graffiti-wall/static/js/main.142acfdb.chunk.js.map",
+    "runtime-main.js": "/graffiti-wall/static/js/runtime-main.a0fe0d20.js",
+    "runtime-main.js.map": "/graffiti-wall/static/js/runtime-main.a0fe0d20.js.map",
+    "static/js/2.d9fff28f.chunk.js": "/graffiti-wall/static/js/2.d9fff28f.chunk.js",
+    "static/js/2.d9fff28f.chunk.js.map": "/graffiti-wall/static/js/2.d9fff28f.chunk.js.map",
+    "static/js/3.dae5fb50.chunk.js": "/graffiti-wall/static/js/3.dae5fb50.chunk.js",
+    "static/js/3.dae5fb50.chunk.js.map": "/graffiti-wall/static/js/3.dae5fb50.chunk.js.map",
     "index.html": "/graffiti-wall/index.html",
-    "static/css/main.d380b7a8.chunk.css.map": "/graffiti-wall/static/css/main.d380b7a8.chunk.css.map",
-    "static/js/2.9c26095e.chunk.js.LICENSE.txt": "/graffiti-wall/static/js/2.9c26095e.chunk.js.LICENSE.txt",
-    "static/media/brickwall.1b8f98a9.jpg": "/graffiti-wall/static/media/brickwall.1b8f98a9.jpg",
-    "static/media/App.css": "/graffiti-wall/static/media/sprayblackbottle.a9a58012.png"
+    "static/css/main.913ec0c5.chunk.css.map": "/graffiti-wall/static/css/main.913ec0c5.chunk.css.map",
+    "static/js/2.d9fff28f.chunk.js.LICENSE.txt": "/graffiti-wall/static/js/2.d9fff28f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/graffiti-wall/static/media/sprayblackbottle.714b364b.png",
+    "static/media/brickwall2.4b4745c4.jpg": "/graffiti-wall/static/media/brickwall2.4b4745c4.jpg",
+    "static/media/brickwall3.5d879e4c.jpg": "/graffiti-wall/static/media/brickwall3.5d879e4c.jpg",
+    "static/media/brickwall4.f106fa32.jpg": "/graffiti-wall/static/media/brickwall4.f106fa32.jpg",
+    "static/media/brickwall5.bcdde784.jpg": "/graffiti-wall/static/media/brickwall5.bcdde784.jpg",
+    "static/media/brickwall6.6bcb5651.jpg": "/graffiti-wall/static/media/brickwall6.6bcb5651.jpg",
+    "static/media/brickwall7.1b880d2b.jpg": "/graffiti-wall/static/media/brickwall7.1b880d2b.jpg",
+    "static/media/brickwall8.ada6006b.jpg": "/graffiti-wall/static/media/brickwall8.ada6006b.jpg",
+    "static/media/brickwall9.fe691b9a.jpg": "/graffiti-wall/static/media/brickwall9.fe691b9a.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.797904c1.js",
-    "static/js/2.9c26095e.chunk.js",
-    "static/css/main.d380b7a8.chunk.css",
-    "static/js/main.94a89a90.chunk.js"
+    "static/js/runtime-main.a0fe0d20.js",
+    "static/js/2.d9fff28f.chunk.js",
+    "static/css/main.913ec0c5.chunk.css",
+    "static/js/main.142acfdb.chunk.js"
   ]
 }
